@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="97.50856mm"
+   height="129.92493mm"
+   viewBox="0 0 345.50277 460.36391"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r"
+   sodipodi:docname="FortGarland.svg">
+  <defs
+     id="defs4">
+    <linearGradient
+       osb:paint="gradient"
+       id="linearGradient4148">
+      <stop
+         id="stop4158"
+         offset="0"
+         style="stop-color:#000000;stop-opacity:1;" />
+      <stop
+         id="stop4160"
+         offset="1"
+         style="stop-color:#000000;stop-opacity:0;" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient4162"
+       osb:paint="gradient">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop4150" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0.14220184"
+         offset="1"
+         id="stop4152" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4162"
+       id="linearGradient4154"
+       x1="377.14285"
+       y1="866.64795"
+       x2="291.42856"
+       y2="866.64795"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.14812127,0,0,0.72383766,275.56359,104.90121)" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="-202.03189"
+     inkscape:cy="251.12168"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1024"
+     inkscape:window-height="572"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-147.2486,-402.46792)">
+    <rect
+       style="fill:url(#linearGradient4154);fill-opacity:1;stroke:#ffffff;stroke-width:0.65487629;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3336"
+       width="16.928144"
+       height="254.37723"
+       x="311.53592"
+       y="608.12714" />
+    <g
+       id="g4181">
+      <g
+         id="g3348"
+         transform="matrix(0.66837265,0,0,1.084003,95.617747,-52.39144)">
+        <rect
+           style="fill:#2ab690;fill-opacity:1;stroke:none;stroke-width:2.21148777;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="rect4164"
+           width="516.93134"
+           height="204.07423"
+           x="77.248596"
+           y="419.61078"
+           ry="39.421482" />
+        <rect
+           style="fill:#2ab690;fill-opacity:1;stroke:#ffffff;stroke-width:5.7049799;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
+           id="rect4164-9"
+           width="500.85327"
+           height="186.91461"
+           x="85.287621"
+           y="427.20221"
+           ry="36.106716" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:59.86352539px;line-height:100%;font-family:'Arial Black';-inkscape-font-specification:'Arial Black, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="397.97498"
+         y="400.01907"
+         id="text4199"
+         sodipodi:linespacing="100%"
+         transform="scale(0.80465782,1.2427643)"><tspan
+           sodipodi:role="line"
+           id="tspan4201"
+           x="397.97498"
+           y="400.01907"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:82.24060822px;line-height:100%;font-family:'Highway Gothic Expanded';-inkscape-font-specification:'Highway Gothic Expanded, ';text-align:center;text-anchor:middle;fill:#ffffff">Fort</tspan><tspan
+           sodipodi:role="line"
+           x="397.97498"
+           y="482.25967"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:82.24060822px;line-height:100%;font-family:'Highway Gothic Expanded';-inkscape-font-specification:'Highway Gothic Expanded, ';text-align:center;text-anchor:middle;fill:#ffffff"
+           id="tspan3346">Garland</tspan></text>
+    </g>
+  </g>
+</svg>
