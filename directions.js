@@ -65,7 +65,7 @@ var FortGarlandShort = omnivore.gpx('GPX/FortGarland.gpx');
         	this.setStyle(style_short);
    		 });
 	FortGarlandShort.addTo(map);
-
+ //test
 
 function permaRoute(){
 	if(typeof DirectionsPermaLayer != "undefined")  {
