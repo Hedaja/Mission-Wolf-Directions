@@ -1,11 +1,28 @@
-var style_short={weight: 6,
-				smoothFactor: 3.0};
-var style_long={color: "#FF0000",
-				dashArray: 6,
-				lineCap: 'butt',
-				weight: 3,
-				smoothFactor: 3.0};
-var DirectionsPermaLayer =  new L.layerGroup();
+var style_short={
+	weight: 4,
+	smoothFactor: 3.0,
+	opacity: 0};
+var style_long={
+	color: "#FF0000",
+	dashArray: 6,
+	lineCap: 'butt',
+	weight: 2,
+	smoothFactor: 3.0,
+	opacity: 0};
+var style_shortPerma={
+	weight: 6,
+	smoothFactor: 3.0};
+var style_longPerma={
+	color: "#FF0000",
+	dashArray: 6,
+	lineCap: 'butt',
+	weight: 3,
+	smoothFactor: 3.0};
+
+var map = L.map('mapid').setView([37.85, -105.08], 9);
+L.tileLayer( 'http://a.tile.openstreetmap.org/{z}/{x}/{y}.png' , {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+}).addTo(map);
 
 function mobilecheck() {
   var check = false;
@@ -13,49 +30,46 @@ function mobilecheck() {
   return check;
 }
 if (!mobilecheck()){
-var MWContact = ("<b>Phone: </b> (719)-859-2157" +  
+var MWContact = ("<b>Phone: </b> (719)-859-2157" +
 					"</br> <b>Email: </b>" + '<a href="mailto:info@missionwolf.org">info@missionwolf.org</a>');
 }else{
-var MWContact = ("<b>Phone: </b>" + '<a href="tel:1-719-859-2157">(719)-859-2157</a>' +  
+var MWContact = ("<b>Phone: </b>" + '<a href="tel:1-719-859-2157">(719)-859-2157</a>' +
 					"</br> <b>Email: </b>" + '<a href="mailto:info@missionwolf.org">info@missionwolf.org</a>');
 };
 
-function WestcliffeRoute(){
-	DirectionsLayerShort = omnivore.gpx('GPX/Westcliffe.gpx');
-	DirectionsLayerShort.on('ready', function() {
+var	WestcliffeShort = omnivore.gpx('GPX/Westcliffe.gpx')
+		.on('ready', function() {
         	this.setStyle(style_short);
-   		 });
-	return DirectionsLayer = L.featureGroup([DirectionsLayerShort]);
-	};
+   		 })
+		.addTo(map);
 
-function BishopsCastelRoute (){
-	DirectionsLayerLong =omnivore.gpx('GPX/	BishopsCastle_long.gpx');
-		DirectionsLayerLong.on('ready', function() {
+
+var BishopsCastleLong =omnivore.gpx('GPX/BishopsCastle_long.gpx');
+		BishopsCastleLong.on('ready', function() {
         		this.setStyle(style_long);
    			 });
-	DirectionsLayerShort = omnivore.gpx('GPX/BishopsCastle.gpx');
-	DirectionsLayerShort.on('ready', function() {
+	BishopsCastleLong.addTo(map);
+var BishopsCastleShort = omnivore.gpx('GPX/BishopsCastle.gpx');
+	BishopsCastleShort.on('ready', function(){
         	this.setStyle(style_short);
    		 });
-	return DirectionsLayer = L.featureGroup([ DirectionsLayerLong, DirectionsLayerShort]);
-		};
+	BishopsCastleShort.addTo(map);
 
-   				 
-function FortGarlandRoute(){
-	DirectionsLayerLong =omnivore.gpx('GPX/	FortGarland_long.gpx');
-	DirectionsLayerLong.on('ready', function() {
+var FortGarlandLong =omnivore.gpx('GPX/FortGarland_long.gpx');
+	FortGarlandLong.on('ready', function() {
         	this.setStyle(style_long);
    		 });
-	DirectionsLayerShort = omnivore.gpx('GPX/FortGarland.gpx');
-	DirectionsLayerShort.on('ready', function() {
+	FortGarlandLong.addTo(map);
+var FortGarlandShort = omnivore.gpx('GPX/FortGarland.gpx');
+	FortGarlandShort.on('ready', function() {
         	this.setStyle(style_short);
    		 });
-	return DirectionsLayer = L.featureGroup([ DirectionsLayerLong, DirectionsLayerShort]);
-	};
+	FortGarlandShort.addTo(map);
+
 
 function permaRoute(){
 	if(typeof DirectionsPermaLayer != "undefined")  {
- 	     DirectionsPermaLayer.remove(); 
+ 	     DirectionsPermaLayer.remove();
 	};
  	if(DirectionsLayer.hasLayer(DirectionsLayerLong)) {
 		var permaLong = L.geoJson(DirectionsLayerLong.toGeoJSON()).setStyle(style_long);
@@ -117,33 +131,30 @@ var iconLocation = L.icon({
 	iconAnchor:   [6,6]
     });
 
-var map = L.map('mapid').setView([37.85, -105.08], 9);
-L.tileLayer( 'http://a.tile.openstreetmap.org/{z}/{x}/{y}.png' , {
-    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
-}).addTo(map);
-
 var MWMarker = L.marker([37.963, -105.215], {icon: iconLogo}).addTo(map);
 MWMarker.bindPopup(MWContact);
 
 var WestcliffeMarker = L.marker([38.1359, -105.4638],{icon: iconWestcliffe}).addTo(map);
 WestcliffeMarker.on('mouseover', function(e) {
-	WestcliffeRoute ();
-	DirectionsLayer.addTo(map);
+	WestcliffeShort.setStyle({opacity: 0.6});
 	});
 WestcliffeMarker.on('mouseout', function(e) {
-	DirectionsLayer.remove()
+	WestcliffeShort.setStyle({opacity: 0});
 	});
 WestcliffeMarker.on('click', function(e) {
 	permaRoute();
 });
 
+
 var BishopsMarker = L.marker([38.0608, -105.0940], {icon: iconBishopsCastle}).addTo(map);
 BishopsMarker.on('mouseover', function(e) {
-	BishopsCastelRoute();
-	DirectionsLayer.addTo(map);
+	BishopsCastleShort.setStyle({opacity: 0.6});
+	BishopsCastleLong.setStyle({opacity: 0.6})
 });
 BishopsMarker.on('mouseout', function(e) {
-	DirectionsLayer.remove()});
+	BishopsCastleShort.setStyle({opacity: 0});
+	BishopsCastleLong.setStyle({opacity: 0})
+});
 BishopsMarker.on('click', function(e) {
 	permaRoute();
 });
@@ -151,16 +162,16 @@ BishopsMarker.on('click', function(e) {
 
 var FortGarlandMarker = L.marker([37.4272, -105.4312], {icon: iconFortGarland}).addTo(map);
 FortGarlandMarker.on('mouseover', function(e) {
-	FortGarlandRoute();
-	DirectionsLayer.addTo(map);
+	FortGarlandShort.setStyle({opacity: 0.6});
+	FortGarlandLong.setStyle({opacity: 0.6})
 });
 FortGarlandMarker.on('mouseout', function(e) {
-	DirectionsLayer.remove()
+	FortGarlandShort.setStyle({opacity: 0});
+	FortGarlandLong.setStyle({opacity: 0})
 });
 FortGarlandMarker.on('click', function(e) {
 	permaRoute();
 });
-
 
 function onLocationFound(e) {
 			var radius = e.accuracy / 2;
