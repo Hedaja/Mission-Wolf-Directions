@@ -41,35 +41,33 @@ var MWContact = ("<b>Phone: </b>" + '<a href="tel:1-719-859-2157">(719)-859-2157
 					"</br> <b>Email: </b>" + '<a href="mailto:info@missionwolf.org">info@missionwolf.org</a>');
 };
 
-var	WestcliffeShort = omnivore.gpx('GPX/Westcliffe.gpx')
-		.on('ready', function() {
+var	WestcliffeRoute = omnivore.gpx('GPX/Westcliffe.gpx'/*, {style: style_short}*/)
+		/*.on('ready', function() {
         	this.setStyle(style_short);
-   		 })
+   		 })*/
 		.addTo(map);
 
 
-var BishopsCastleLong =omnivore.gpx('GPX/BishopsCastle_long.gpx');
-		BishopsCastleLong.on('ready', function() {
+var BishopCastleLong =omnivore.gpx('GPX/BishopCastle_long.gpx')
+		.on('ready', function() {
         		this.setStyle(style_long);
    			 });
-	BishopsCastleLong.addTo(map);
-var BishopsCastleShort = omnivore.gpx('GPX/BishopsCastle.gpx');
-	BishopsCastleShort.on('ready', function(){
+var BishopCastleShort = omnivore.gpx('GPX/BishopCastle.gpx')
+		.on('ready', function(){
         	this.setStyle(style_short);
    		 });
-	BishopsCastleShort.addTo(map);
+var BishopCastleRoute=L.featureGroup([BishopCastleShort, BishopCastleLong]).addTo(map);
 
-var FortGarlandLong =omnivore.gpx('GPX/FortGarland_long.gpx');
-	FortGarlandLong.on('ready', function() {
+var FortGarlandLong =omnivore.gpx('GPX/FortGarland_long.gpx')
+		.on('ready', function() {
         	this.setStyle(style_long);
    		 });
-	FortGarlandLong.addTo(map);
-var FortGarlandShort = omnivore.gpx('GPX/FortGarland.gpx');
-	FortGarlandShort.on('ready', function() {
+var FortGarlandShort = omnivore.gpx('GPX/FortGarland.gpx')
+		.on('ready', function() {
         	this.setStyle(style_short);
    		 });
-	FortGarlandShort.addTo(map);
- //test
+var FortGarlandRoute=L.featureGroup([FortGarlandShort, FortGarlandLong]).addTo(map);
+
 
 
 
@@ -95,8 +93,8 @@ var iconFortGarland = L.icon({
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
-var iconBishopsCastle = L.icon({
-    iconUrl: 'BishopsCastle.svg',
+var iconBishopCastle = L.icon({
+    iconUrl: 'BishopCastle.svg',
     shadowUrl: 'FortGarlandShadow.svg',
 
     iconSize:     [50, 60], // size of the icon
@@ -128,32 +126,34 @@ MWMarker.bindPopup(MWContact);
 
 var WestcliffeMarker = L.marker([38.1359, -105.4638],{icon: iconWestcliffe}).addTo(map);
 WestcliffeMarker.on('mouseover', function(e) {
-	WestcliffeShort.setStyle(style_Hover);
+	WestcliffeRoute.setStyle(style_Hover);
 	});
 WestcliffeMarker.on('mouseout', function(e) {
-	WestcliffeShort.setStyle({opacity: 0});
+	WestcliffeRoute.setStyle(style_invisible);
 	});
 WestcliffeMarker.on('click', function(e) {
-	WestcliffeShort.setStyle(style_shortPerma);
+	WestcliffeRoute.setStyle(style_shortPerma);
+	BishopCastleRoute.setStyle(style_invisible);
+	FortGarlandRoute.setStyle(style_invisible);
 	WestcliffeMarker.off('mouseout');
-	BishopsMarker.on('mouseout');
+	BishopMarker.on('mouseout');
 	FortGarlandMarker.on('mouseout');
 });
 
 
-var BishopsMarker = L.marker([38.0608, -105.0940], {icon: iconBishopsCastle}).addTo(map);
-BishopsMarker.on('mouseover', function(e) {
-	BishopsCastleShort.setStyle(style_Hover);
-	BishopsCastleLong.setStyle(style_Hover)
+var BishopMarker = L.marker([38.0608, -105.0940], {icon: iconBishopCastle}).addTo(map);
+BishopMarker.on('mouseover', function(e) {
+	BishopCastleRoute.setStyle(style_Hover);
+})
+BishopMarker.on('mouseout', function(e) {
+	BishopCastleRoute.setStyle(style_invisible);
 });
-BishopsMarker.on('mouseout', function(e) {
-	BishopsCastleShort.setStyle({opacity: 0});
-	BishopsCastleLong.setStyle({opacity: 0})
-});
-BishopsMarker.on('click', function(e) {
-	BishopsCastleShort.setStyle(style_shortPerma);
-	BishopsCastleLong.setStyle(style_longPerma);
-	BishopsMarker.off('mouseout');
+BishopMarker.on('click', function(e) {
+	BishopCastleShort.setStyle(style_shortPerma);
+	BishopCastleLong.setStyle(style_longPerma);
+	WestcliffeRoute.setStyle(style_invisible);
+	FortGarlandRoute.setStyle(style_invisible);
+	BishopMarker.off('mouseout');
 	WestcliffeMarker.on('mouseout');
 	FortGarlandMarker.on('mouseout');
 });
@@ -161,19 +161,19 @@ BishopsMarker.on('click', function(e) {
 
 var FortGarlandMarker = L.marker([37.4272, -105.4312], {icon: iconFortGarland}).addTo(map);
 FortGarlandMarker.on('mouseover', function(e) {
-	FortGarlandShort.setStyle(style_Hover);
-	FortGarlandLong.setStyle(style_Hover)
+	FortGarlandRoute.setStyle(style_Hover);
 });
 FortGarlandMarker.on('mouseout', function(e) {
-	FortGarlandShort.setStyle({opacity: 0});
-	FortGarlandLong.setStyle({opacity: 0})
+	FortGarlandRoute.setStyle(style_invisible);
 });
 FortGarlandMarker.on('click', function(e) {
 	FortGarlandShort.setStyle(style_shortPerma);
 	FortGarlandLong.setStyle(style_longPerma);
+	WestcliffeRoute.setStyle(style_invisible);
+	BishopCastleRoute.setStyle(style_invisible);
 	FortGarlandMarker.off('mouseout');
 	WestcliffeMarker.on('mouseout');
-	BishopsMarker.on('mouseout');
+	BishopMarker.on('mouseout');
 });
 
 function onLocationFound(e) {
