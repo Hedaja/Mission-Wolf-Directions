@@ -8,7 +8,24 @@
 <link rel="shortcut icon" href="http://www.missionwolf.org/design/favicon.png">
  <link rel="stylesheet" href="Leaflet/leaflet.css" />
 <style>
-#mapid { height: 500px; width: 350px;}
+#mapid { height: 500px; width: 300px;}
+.ui-button {
+  background:#3887BE;
+  display:block;
+  position:absolute;
+  top:5%;left:50%;
+  width:90px;
+  margin:-20px 0 0 -50px;
+  z-index:500;
+  text-align:center;
+  padding:2px;
+  border:1px solid rgba(0,0,0,0.4);
+  border-radius:3px;
+  }
+  .ui-button:hover {
+    background:#3074a4;
+    color:#fff;
+    }
 </style>
 <script src="Driving%20Directions%20%7C%20Mission:%20Wolf_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript" src="Driving%20Directions%20%7C%20Mission:%20Wolf_files/dropdown.js"></script>
 <script type="text/javascript">
@@ -16,6 +33,7 @@
   _gaq.push(['_setAccount', 'UA-25998185-1']);
 _gaq.push (['_gat._anonymizeIp']);
   _gaq.push(['_trackPageview']);
+
 
 
   (function() {
@@ -74,17 +92,15 @@ left. Follow the directions above from Gardner. <em>This route may have deep sno
 <br>
 </td>
 <td width=auto >
-<button onclick="map.locate({setView: true, maxZoom: 16})" >Get my location</button>
 
 <div id="mapid"></div>
+if (navigator.geolocation) {<a id='geolocate' class='ui-button'style="color:#fff; font-size:130%" onclick="map.locate({setView: true, maxZoom: 16})">Locate me</a>}
+
+
 </td>
 </table>
 <script type="text/javascript"  src="Leaflet/leaflet.js"></script>
 <script type="text/javascript"  src='Leaflet/leaflet-omnivore.min.js'></script>
 <script type="text/javascript"  src='directions.js'></script>
-<script>
-if (!mobilecheck()){
-document.getElementById('locbutton').style.visibility='hidden';
-}
-</script>
+
 </div></div></div></div><div id="footer">All content copyright&nbsp;©1986-2016 Mission: Wolf. All rights reserved. Site by <a title="Jeff Wagner - Environmental and Spiritual Education" href="http://www.wild-sky.org/" target="_blank">Jeff Wagner</a>.</div></body></html>

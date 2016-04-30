@@ -16,7 +16,7 @@
    viewBox="0 0 345.50277 460.36391"
    id="svg2"
    version="1.1"
-   inkscape:version="0.91 r"
+   inkscape:version="0.91 r13725"
    sodipodi:docname="FortGarland.svg">
   <defs
      id="defs4">
@@ -53,7 +53,7 @@
        x2="291.42856"
        y2="866.64795"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.14812127,0,0,0.72383766,275.56359,104.90121)" />
+       gradientTransform="matrix(0.14812127,0,0,0.72383766,275.56358,104.90121)" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -63,15 +63,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="-202.03189"
+     inkscape:cx="124.39668"
      inkscape:cy="251.12168"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g4181"
      showgrid="false"
-     inkscape:window-width="1024"
-     inkscape:window-height="572"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     inkscape:window-width="987"
+     inkscape:window-height="576"
+     inkscape:window-x="37"
+     inkscape:window-y="24"
      inkscape:window-maximized="1"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -85,7 +85,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -127,18 +127,18 @@
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:59.86352539px;line-height:100%;font-family:'Arial Black';-inkscape-font-specification:'Arial Black, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          x="397.97498"
-         y="400.01907"
+         y="401.12524"
          id="text4199"
          sodipodi:linespacing="100%"
          transform="scale(0.80465782,1.2427643)"><tspan
            sodipodi:role="line"
            id="tspan4201"
            x="397.97498"
-           y="400.01907"
+           y="401.12524"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:82.24060822px;line-height:100%;font-family:'Highway Gothic Expanded';-inkscape-font-specification:'Highway Gothic Expanded, ';text-align:center;text-anchor:middle;fill:#ffffff">Fort</tspan><tspan
            sodipodi:role="line"
            x="397.97498"
-           y="482.25967"
+           y="483.36584"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:82.24060822px;line-height:100%;font-family:'Highway Gothic Expanded';-inkscape-font-specification:'Highway Gothic Expanded, ';text-align:center;text-anchor:middle;fill:#ffffff"
            id="tspan3346">Garland</tspan></text>
     </g>

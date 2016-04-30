@@ -26,9 +26,9 @@ var style_invisible={
 	opacity: 0
 }
 
-var map = L.map('mapid').setView([37.85, -105.08], 9);
+var map = L.map('mapid').setView([37.85, -105.18], 9);
 L.tileLayer( 'http://a.tile.openstreetmap.org/{z}/{x}/{y}.png' , {
-    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+    attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>| <a href="http://www.openstreetmap.org/welcome">Improve map</a>'
 }).addTo(map);
 
 function mobilecheck() {
