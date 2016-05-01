@@ -76,6 +76,7 @@ var FortGarlandRoute=L.featureGroup([FortGarlandShort, FortGarlandLong]).addTo(m
 
 mouseout_Westcliffe= function(){
 		WestcliffeRoute.setStyle(style_invisible);
+		$("#WestcliffeText")setStyle(background-color: none)
 }
 mouseout_BishopCastle= function(){
 		BishopCastleRoute.setStyle(style_invisible);
@@ -154,12 +155,11 @@ WestcliffeMarker.on('click', function(e) {
 	FortGarlandMarker.on('mouseout', mouseout_FortGarland);
 });
 $("#WestcliffeText").hover(function(){
-	WestcliffeRoute.setStyle(style_Hover)},
+	WestcliffeRoute.setStyle(style_Hover);
+	$("#WestcliffeText").setStyle(background-color: #e4e4e4);
+},
 	mouseout_Westcliffe
 	);
-//$("#WestcliffeText").hover(alert("woop"));
-	//WestcliffeRoute.setStyle(style_Hover),
-	//mouseout_Westcliffe
 
 var BishopMarker = L.marker([38.0608, -105.0940], {icon: iconBishopCastle}).addTo(map);
 BishopMarker.on('mouseover', function(e) {
@@ -176,6 +176,10 @@ BishopMarker.on('click', function(e) {
 	WestcliffeMarker.on('mouseout', mouseout_Westcliffe);
 	FortGarlandMarker.on('mouseout', mouseout_FortGarland);
 });
+$("#BishopCastleText").hover(function(){
+	BishopCastleRoute.setStyle(style_Hover)},
+	mouseout_BishopCastle
+	);
 
 
 var FortGarlandMarker = L.marker([37.4272, -105.4312], {icon: iconFortGarland}).addTo(map);
@@ -193,6 +197,10 @@ FortGarlandMarker.on('click', function(e) {
 	WestcliffeMarker.on('mouseout');
 	BishopMarker.on('mouseout', mouseout_BishopCastle);
 });
+$("#FortGarlandText").hover(function(){
+	FortGarlandRoute.setStyle(style_Hover)},
+	mouseout_FortGarland
+	);
 
 function onLocationFound(e) {
 			var radius = e.accuracy / 2;
