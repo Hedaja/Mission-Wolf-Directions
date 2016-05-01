@@ -44,6 +44,9 @@ var MWContact = ("<b>Phone: </b>" + '<a href="tel:1-719-859-2157">(719)-859-2157
 					"</br> <b>Email: </b>" + '<a href="mailto:info@missionwolf.org">info@missionwolf.org</a>');
 };
 
+var LocationMarker;
+var LocationCircle;
+
 var	WestcliffeRoute = omnivore.gpx('GPX/Westcliffe.gpx')
 		.on('ready', function() {
         	this.setStyle(style_short);
@@ -187,9 +190,13 @@ FortGarlandMarker.on('click', function(e) {
 
 function onLocationFound(e) {
 			var radius = e.accuracy / 2;
-
-			L.marker(e.latlng, {icon: iconLocation} ).addTo(map)
-			L.circle(e.latlng, radius).addTo(map);
+			if (typeof(LocationMarker)==="undefined"){
+				LocationMarker= new L.marker(e.latlng, {icon: iconLocation} ).addTo(map)
+				LocationCircle= new L.circle(e.latlng, radius).addTo(map)}
+			else {
+				LocationMarker.setLatLng(e.latlng);
+				LocationCircle.setLatLng(e.latlng)
+			}
 		}
 function onLocationError(e) {
 			alert(e.message);
