@@ -153,7 +153,13 @@ WestcliffeMarker.on('click', function(e) {
 	BishopMarker.on('mouseout', mouseout_BishopCastle);
 	FortGarlandMarker.on('mouseout', mouseout_FortGarland);
 });
-
+$("#WestcliffeText").hover(function(){
+	WestcliffeRoute.setStyle(style_Hover)},
+	mouseout_Westcliffe
+	);
+//$("#WestcliffeText").hover(alert("woop"));
+	//WestcliffeRoute.setStyle(style_Hover),
+	//mouseout_Westcliffe
 
 var BishopMarker = L.marker([38.0608, -105.0940], {icon: iconBishopCastle}).addTo(map);
 BishopMarker.on('mouseover', function(e) {
@@ -197,10 +203,7 @@ function onLocationFound(e) {
 			} else {
 				LocationMarker.setLatLng(e.latlng);
 				LocationCircle.setLatLng(e.latlng).setRadius(radius);
-					if (follow){
-					map.setView(e.latlng)
 				}
-			}
 		}
 function onLocationError(e) {
 			alert(e.message);
