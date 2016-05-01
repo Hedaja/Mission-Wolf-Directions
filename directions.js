@@ -191,11 +191,15 @@ FortGarlandMarker.on('click', function(e) {
 function onLocationFound(e) {
 			var radius = e.accuracy / 2;
 			if (typeof(LocationMarker)==="undefined"){
-				LocationMarker= new L.marker(e.latlng, {icon: iconLocation} ).addTo(map)
-				LocationCircle= new L.circle(e.latlng, radius).addTo(map)}
-			else {
+				LocationMarker= new L.marker(e.latlng, {icon: iconLocation} ).addTo(map);
+				LocationCircle= new L.circle(e.latlng, radius).addTo(map);
+				map.setView(e.latlng, 11)
+			} else {
 				LocationMarker.setLatLng(e.latlng);
-				LocationCircle.setLatLng(e.latlng)
+				LocationCircle.setLatLng(e.latlng).setRadius(radius);
+					if (follow){
+					map.setView(e.latlng)
+				}
 			}
 		}
 function onLocationError(e) {
@@ -204,3 +208,14 @@ function onLocationError(e) {
 
 		map.on('locationfound', onLocationFound);
 		map.on('locationerror', onLocationError);
+
+function locButton(){
+		    var elem = document.getElementById("geolocate");
+		    if (elem.text=="Locate me"){
+		        map.locate({watch:true, enableHighAccuracy:true, setView:true})
+		        elem.text = "Cancle";
+		    } else {
+					elem.text = "Locate me";
+					map.stopLocate()
+				}
+			}
