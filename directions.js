@@ -1,35 +1,11 @@
-var style_short={
-	weight: 4,
-	smoothFactor: 3.0,
-	opacity: 0
-};
-var style_long={
-	color: "#FF0000",
-	dashArray: 6,
-	lineCap: 'butt',
-	weight: 2,
-	smoothFactor: 3.0,
-	opacity: 0
-};
-var style_shortPerma={
-	weight: 6,
-	opacity: 1
-};
-var style_longPerma={
-		weight: 3,
-		opacity: 1
-};
-var style_Hover={
-	opacity: 0.5
-};
-var style_invisible={
-	opacity: 0
-}
-
-var map = L.map('mapid').setView([37.85, -105.18], 9);
-L.tileLayer( 'http://a.tile.openstreetmap.org/{z}/{x}/{y}.png' , {
-    attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>| <a href="http://www.openstreetmap.org/welcome">Improve map</a>'
-}).addTo(map);
+var style_short={weight: 6,
+				smoothFactor: 3.0};
+var style_long={color: "#FF0000",
+				dashArray: 6,
+				lineCap: 'butt',
+				weight: 3,
+				smoothFactor: 3.0};
+var DirectionsPermaLayer =  new L.layerGroup();
 
 function mobilecheck() {
   var check = false;
@@ -37,53 +13,59 @@ function mobilecheck() {
   return check;
 }
 if (!mobilecheck()){
-var MWContact = ("<b>Phone: </b> (719)-859-2157" +
+var MWContact = ("<b>Phone: </b> (719)-859-2157" +  
 					"</br> <b>Email: </b>" + '<a href="mailto:info@missionwolf.org">info@missionwolf.org</a>');
 }else{
-var MWContact = ("<b>Phone: </b>" + '<a href="tel:1-719-859-2157">(719)-859-2157</a>' +
+var MWContact = ("<b>Phone: </b>" + '<a href="tel:1-719-859-2157">(719)-859-2157</a>' +  
 					"</br> <b>Email: </b>" + '<a href="mailto:info@missionwolf.org">info@missionwolf.org</a>');
 };
 
-var LocationMarker;
-var LocationCircle;
-
-var	WestcliffeRoute = omnivore.gpx('GPX/Westcliffe.gpx')
-		.on('ready', function() {
+function WestcliffeRoute(){
+	DirectionsLayerShort = omnivore.gpx('GPX/Westcliffe.gpx');
+	DirectionsLayerShort.on('ready', function() {
         	this.setStyle(style_short);
-   		 })
-		.addTo(map);
+   		 });
+	return DirectionsLayer = L.featureGroup([DirectionsLayerShort]);
+	};
 
-
-var BishopCastleLong =omnivore.gpx('GPX/BishopCastle_long.gpx')
-		.on('ready', function() {
+function BishopsCastelRoute (){
+	DirectionsLayerLong =omnivore.gpx('GPX/	BishopsCastle_long.gpx');
+		DirectionsLayerLong.on('ready', function() {
         		this.setStyle(style_long);
    			 });
-var BishopCastleShort = omnivore.gpx('GPX/BishopCastle.gpx')
-		.on('ready', function(){
+	DirectionsLayerShort = omnivore.gpx('GPX/BishopsCastle.gpx');
+	DirectionsLayerShort.on('ready', function() {
         	this.setStyle(style_short);
    		 });
-var BishopCastleRoute=L.featureGroup([BishopCastleShort, BishopCastleLong]).addTo(map);
+	return DirectionsLayer = L.featureGroup([ DirectionsLayerLong, DirectionsLayerShort]);
+		};
 
-var FortGarlandLong =omnivore.gpx('GPX/FortGarland_long.gpx')
-		.on('ready', function() {
+   				 
+function FortGarlandRoute(){
+	DirectionsLayerLong =omnivore.gpx('GPX/	FortGarland_long.gpx');
+	DirectionsLayerLong.on('ready', function() {
         	this.setStyle(style_long);
    		 });
-var FortGarlandShort = omnivore.gpx('GPX/FortGarland.gpx')
-		.on('ready', function() {
+	DirectionsLayerShort = omnivore.gpx('GPX/FortGarland.gpx');
+	DirectionsLayerShort.on('ready', function() {
         	this.setStyle(style_short);
    		 });
-var FortGarlandRoute=L.featureGroup([FortGarlandShort, FortGarlandLong]).addTo(map);
+	return DirectionsLayer = L.featureGroup([ DirectionsLayerLong, DirectionsLayerShort]);
+	};
 
-mouseout_Westcliffe= function(){
-		WestcliffeRoute.setStyle(style_invisible);
-}
-mouseout_BishopCastle= function(){
-		BishopCastleRoute.setStyle(style_invisible);
-}
-mouseout_FortGarland= function(){
-		FortGarlandRoute.setStyle(style_invisible);
-}
-
+function permaRoute(){
+	if(typeof DirectionsPermaLayer != "undefined")  {
+ 	     DirectionsPermaLayer.remove(); 
+	};
+ 	if(DirectionsLayer.hasLayer(DirectionsLayerLong)) {
+		var permaLong = L.geoJson(DirectionsLayerLong.toGeoJSON()).setStyle(style_long);
+	 	var permaShort = L.geoJson(DirectionsLayerShort.toGeoJSON()).setStyle(style_short);
+		return DirectionsPermaLayer =  L.featureGroup([ permaShort, permaLong]).addTo(map);
+	} else {
+		var permaShort = L.geoJson(DirectionsLayerShort.toGeoJSON()).setStyle(style_short);
+		return DirectionsPermaLayer =  L.featureGroup([ permaShort]).addTo(map);
+	};
+};
 
 var iconWestcliffe = L.icon({
     iconUrl: 'Westcliffe.svg',
@@ -107,8 +89,8 @@ var iconFortGarland = L.icon({
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
-var iconBishopCastle = L.icon({
-    iconUrl: 'BishopCastle.svg',
+var iconBishopsCastle = L.icon({
+    iconUrl: 'BishopsCastle.svg',
     shadowUrl: 'FortGarlandShadow.svg',
 
     iconSize:     [50, 60], // size of the icon
@@ -135,68 +117,56 @@ var iconLocation = L.icon({
 	iconAnchor:   [6,6]
     });
 
+var map = L.map('mapid').setView([37.85, -105.08], 9);
+L.tileLayer( 'http://a.tile.openstreetmap.org/{z}/{x}/{y}.png' , {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+}).addTo(map);
+
 var MWMarker = L.marker([37.963, -105.215], {icon: iconLogo}).addTo(map);
 MWMarker.bindPopup(MWContact);
 
 var WestcliffeMarker = L.marker([38.1359, -105.4638],{icon: iconWestcliffe}).addTo(map);
 WestcliffeMarker.on('mouseover', function(e) {
-	WestcliffeRoute.setStyle(style_Hover);
+	WestcliffeRoute ();
+	DirectionsLayer.addTo(map);
 	});
-WestcliffeMarker.on('mouseout', mouseout_Westcliffe);
+WestcliffeMarker.on('mouseout', function(e) {
+	DirectionsLayer.remove()
+	});
 WestcliffeMarker.on('click', function(e) {
-	WestcliffeRoute.setStyle(style_shortPerma);
-	BishopCastleShort.setStyle(style_short);
-	BishopCastleLong.setStyle(style_long);
-	FortGarlandShort.setStyle(style_short);
-	FortGarlandLong.setStyle(style_long);
-	WestcliffeMarker.off('mouseout');
-	BishopMarker.on('mouseout', mouseout_BishopCastle);
-	FortGarlandMarker.on('mouseout', mouseout_FortGarland);
+	permaRoute();
 });
 
-
-var BishopMarker = L.marker([38.0608, -105.0940], {icon: iconBishopCastle}).addTo(map);
-BishopMarker.on('mouseover', function(e) {
-	BishopCastleRoute.setStyle(style_Hover);
-})
-BishopMarker.on('mouseout', mouseout_BishopCastle);
-BishopMarker.on('click', function(e) {
-	BishopCastleShort.setStyle(style_shortPerma);
-	BishopCastleLong.setStyle(style_longPerma);
-	WestcliffeRoute.setStyle(style_short);
-	FortGarlandShort.setStyle(style_short);
-	FortGarlandLong.setStyle(style_long);
-	BishopMarker.off('mouseout');
-	WestcliffeMarker.on('mouseout', mouseout_Westcliffe);
-	FortGarlandMarker.on('mouseout', mouseout_FortGarland);
+var BishopsMarker = L.marker([38.0608, -105.0940], {icon: iconBishopsCastle}).addTo(map);
+BishopsMarker.on('mouseover', function(e) {
+	BishopsCastelRoute();
+	DirectionsLayer.addTo(map);
+});
+BishopsMarker.on('mouseout', function(e) {
+	DirectionsLayer.remove()});
+BishopsMarker.on('click', function(e) {
+	permaRoute();
 });
 
 
 var FortGarlandMarker = L.marker([37.4272, -105.4312], {icon: iconFortGarland}).addTo(map);
 FortGarlandMarker.on('mouseover', function(e) {
-	FortGarlandRoute.setStyle(style_Hover);
+	FortGarlandRoute();
+	DirectionsLayer.addTo(map);
 });
-FortGarlandMarker.on('mouseout', mouseout_FortGarland);
+FortGarlandMarker.on('mouseout', function(e) {
+	DirectionsLayer.remove()
+});
 FortGarlandMarker.on('click', function(e) {
-	FortGarlandShort.setStyle(style_shortPerma);
-	FortGarlandLong.setStyle(style_longPerma);
-	WestcliffeRoute.setStyle(style_short);
-	BishopCastleShort.setStyle(style_short);
-	BishopCastleLong.setStyle(style_long);
-	FortGarlandMarker.off('mouseout');
-	WestcliffeMarker.on('mouseout');
-	BishopMarker.on('mouseout', mouseout_BishopCastle);
+	permaRoute();
 });
+
 
 function onLocationFound(e) {
 			var radius = e.accuracy / 2;
-			if (typeof(LocationMarker)==="undefined"){
-				LocationMarker= new L.marker(e.latlng, {icon: iconLocation} ).addTo(map)
-				LocationCircle= new L.circle(e.latlng, radius).addTo(map)}
-			else {
-				LocationMarker.setLatLng(e.latlng);
-				LocationCircle.setLatLng(e.latlng)
-			}
+
+			L.marker(e.latlng, {icon: iconLocation} ).addTo(map)
+			L.circle(e.latlng, radius).addTo(map);
 		}
 function onLocationError(e) {
 			alert(e.message);
