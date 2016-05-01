@@ -8,7 +8,24 @@
 <link rel="shortcut icon" href="http://www.missionwolf.org/design/favicon.png">
  <link rel="stylesheet" href="Leaflet/leaflet.css" />
 <style>
-#mapid { height: 500px; width: 350px;}
+#mapid { height: 500px; width: 300px;}
+.ui-button {
+  background:#3887BE;
+  display:block;
+  position:absolute;
+  top:5%;left:50%;
+  width:90px;
+  margin:-20px 0 0 -50px;
+  z-index:500;
+  text-align:center;
+  padding:2px;
+  border:1px solid rgba(0,0,0,0.4);
+  border-radius:3px;
+  }
+  .ui-button:hover {
+    background:#3074a4;
+    color:#fff;
+    }
 </style>
 <script src="Driving%20Directions%20%7C%20Mission:%20Wolf_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript" src="Driving%20Directions%20%7C%20Mission:%20Wolf_files/dropdown.js"></script>
 <script type="text/javascript">
@@ -16,6 +33,7 @@
   _gaq.push(['_setAccount', 'UA-25998185-1']);
 _gaq.push (['_gat._anonymizeIp']);
   _gaq.push(['_trackPageview']);
+
 
 
   (function() {
@@ -37,54 +55,52 @@ _gaq.push (['_gat._anonymizeIp']);
 
 <div id="content"><h1>Driving Directions</h1><div class="content"><strong>Mission: Wolf is open every day of the year! <span style="color:#ff0000;">Please DO NOT bring your dog here.</span></strong><br>
 <br>
-<span style="color:#ff0000;">Beware GPS! </span>Once on the dirt roads stick to the directions listed below or you <em>will</em> get lost.<br>
+<span style="color:#fc0400;">Beware GPS! </span>Once on the dirt roads stick to the directions listed below or you <em>will</em> get lost.<br>
 <br>
 <table width="100%" border="0">
   <tr valign="top">
 
 <td>
 <strong>From Westcliffe (coming from the north):</strong> Follow Highway
- 69 south aproximately 30 miles and turn left on Gardner Road (County 
-Road 634). Follow Gardner Road for 13.2 miles, keeping right at two "Y" 
-intersections in the first 5 miles. At the Blue Spring State Land Trust 
-sign and cattleguard, turn right. Follow the Mission: Wolf driveway 1.6 
-miles along a fence line and across the field, all the way up the hill 
+ 69 south aproximately 30 miles and turn left on Gardner Road (County
+Road 634). Follow Gardner Road for 13.2 miles, keeping right at two "Y"
+intersections in the first 5 miles. At the Blue Spring State Land Trust
+sign and cattleguard, turn right. Follow the Mission: Wolf driveway 1.6
+miles along a fence line and across the field, all the way up the hill
 to the sanctuary. <em>This route may be extremely muddy with large snowdrifts from November through May.</em><br>
 <br>
 <strong>From Gardner (coming from the south):</strong> Follow Highway 69
- west from Gardner for 2 miles, and turn right on Gardner Road (County 
-Road 634, a dirt road.) Follow Gardner Road for 13.2 miles, keeping 
-right at two "Y" intersections in the first 5 miles. At the Blue Spring 
-State Land Trust sign and cattleguard, turn right. Follow the Mission: 
+ west from Gardner for 2 miles, and turn right on Gardner Road (County
+Road 634, a dirt road.) Follow Gardner Road for 13.2 miles, keeping
+right at two "Y" intersections in the first 5 miles. At the Blue Spring
+State Land Trust sign and cattleguard, turn right. Follow the Mission:
 Wolf driveway 1.6 miles along a fence line and across the field, all the
  way up the hill to the sanctuary. <em>This route may be extremely muddy with large snowdrifts from November through May.</em><br>
 <br>
-<strong>From Bishop's Castle on Hwy 165:</strong> Drive one mile 
-northwest on Hwy 165 and turn left at Ophir Creek Campground. Follow 
-Ophir Creek Road south for 16 miles turn left at the Mission: Wolf 
-driveway, just before the Blue Spring State Land Trust cattleguard. 
-Drive 1.6 miles along a fence and all the way up the hill to the 
+<strong>From Bishop's Castle on Hwy 165:</strong> Drive one mile
+northwest on Hwy 165 and turn left at Ophir Creek Campground. Follow
+Ophir Creek Road south for 16 miles turn left at the Mission: Wolf
+driveway, just before the Blue Spring State Land Trust cattleguard.
+Drive 1.6 miles along a fence and all the way up the hill to the
 sanctuary. <strong><em>This route is closed in winter.</em></strong><br>
 <br>
 <strong>From Taos, NM or Great Sand Dunes via Hwy 160 (coming from the southwest/west): </strong>From
  Fort Garland, CO, take Hwy 160 east for 18.5 miles. Turn left onto Pass
  Creek Road, a dirt road. Drive nine miles and turn right onto CR 570, a
- paved road, at the T intersection. Drive 5 miles to Hwy 69 and turn 
+ paved road, at the T intersection. Drive 5 miles to Hwy 69 and turn
 left. Follow the directions above from Gardner. <em>This route may have deep snow in winter.</em><br>
 <br>
 </td>
 <td width=auto >
-<button onclick="map.locate({setView: true, maxZoom: 16})" >Get my location</button>
 
-<div id="mapid"></div>
+<div id="mapid">
+if (navigator.geolocation) {<a id='geolocate' class='ui-button'style="color:#fff; font-size:130%" onclick="map.locate({watch:true, setView:true ,enableHighAccuracy:true})">Locate me</a>}
+</div>
+
 </td>
 </table>
 <script type="text/javascript"  src="Leaflet/leaflet.js"></script>
 <script type="text/javascript"  src='Leaflet/leaflet-omnivore.min.js'></script>
 <script type="text/javascript"  src='directions.js'></script>
-<script>
-if (!mobilecheck()){
-document.getElementById('locbutton').style.visibility='hidden';
-}
-</script>
+
 </div></div></div></div><div id="footer">All content copyright&nbsp;©1986-2016 Mission: Wolf. All rights reserved. Site by <a title="Jeff Wagner - Environmental and Spiritual Education" href="http://www.wild-sky.org/" target="_blank">Jeff Wagner</a>.</div></body></html>
