@@ -11,13 +11,13 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="144.1454mm"
+   width="145.88951mm"
    height="102.91222mm"
-   viewBox="0 0 510.75143 364.64958"
+   viewBox="0 0 516.93134 364.64958"
    id="svg2"
    version="1.1"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="Westcliffe.svg">
+   inkscape:version="0.91 r"
+   sodipodi:docname="City.svg">
   <defs
      id="defs4">
     <linearGradient
@@ -53,7 +53,7 @@
        x2="291.42856"
        y2="866.64795"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.14812127,0,0,0.72383766,323.54328,104.90121)" />
+       gradientTransform="matrix(0.14812127,0,0,0.72383766,293.80326,104.90121)" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -62,16 +62,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="269.46848"
-     inkscape:cy="227.1803"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="136.83471"
+     inkscape:cy="21.965551"
      inkscape:document-units="px"
-     inkscape:current-layer="g4181"
+     inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="987"
-     inkscape:window-height="576"
-     inkscape:window-x="37"
-     inkscape:window-y="24"
+     inkscape:window-width="1024"
+     inkscape:window-height="572"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -93,44 +93,44 @@
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-112.60394,-498.18224)">
+     transform="translate(-77.248596,-498.18222)">
     <rect
        style="fill:url(#linearGradient4154);fill-opacity:1;stroke:#ffffff;stroke-width:0.65487629;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
        id="rect3336"
        width="16.928144"
        height="254.37723"
-       x="359.51559"
+       x="329.77557"
        y="608.12714" />
     <g
        id="g4181">
       <rect
          ry="24.243662"
          y="498.18222"
-         x="112.60394"
+         x="77.248596"
          height="125.5028"
-         width="510.75143"
+         width="516.93134"
          id="rect4164"
          style="fill:#2ab690;fill-opacity:1;stroke:none;stroke-width:2.21148777;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" />
       <rect
          ry="21.359825"
          y="505.64664"
-         x="120.47815"
+         x="85.218094"
          height="110.57398"
-         width="495.00302"
+         width="500.99234"
          id="rect4164-9"
-         style="fill:#2ab690;fill-opacity:1;stroke:#ffffff;stroke-width:4.36179066;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" />
+         style="fill:#2ab690;fill-opacity:1;stroke:#ffffff;stroke-width:4.38809967;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" />
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:59.86352539px;line-height:130.99999428%;font-family:'Arial Black';-inkscape-font-specification:'Arial Black, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="176.63379"
-         y="481.29633"
+         x="136.53551"
+         y="478.86911"
          id="text4199"
          sodipodi:linespacing="130.99999%"
          transform="scale(0.80465782,1.2427643)"><tspan
            sodipodi:role="line"
            id="tspan4201"
-           x="176.63379"
-           y="481.29633"
+           x="136.53551"
+           y="478.86911"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:82.24060822px;line-height:130.99999428%;font-family:'Highway Gothic Expanded';-inkscape-font-specification:'Highway Gothic Expanded, ';fill:#ffffff">WESTCLIFFE</tspan></text>
     </g>
   </g>
