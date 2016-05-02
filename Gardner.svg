@@ -11,13 +11,13 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="144.1454mm"
-   height="102.91222mm"
-   viewBox="0 0 510.75143 364.64958"
+   width="95.966034mm"
+   height="102.9122mm"
+   viewBox="0 0 340.03713 364.64953"
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="Westcliffe.svg">
+   sodipodi:docname="Gardner.svg">
   <defs
      id="defs4">
     <linearGradient
@@ -53,7 +53,7 @@
        x2="291.42856"
        y2="866.64795"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.14812127,0,0,0.72383766,323.54328,104.90121)" />
+       gradientTransform="matrix(0.14812127,0,0,0.72383766,238.18617,104.90124)" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -63,8 +63,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="269.46848"
-     inkscape:cy="188.81613"
+     inkscape:cx="269.46849"
+     inkscape:cy="188.81612"
      inkscape:document-units="px"
      inkscape:current-layer="g4181"
      showgrid="false"
@@ -85,7 +85,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -93,45 +93,45 @@
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-112.60394,-498.18224)">
+     transform="translate(-112.60393,-498.1823)">
     <rect
        style="fill:url(#linearGradient4154);fill-opacity:1;stroke:#ffffff;stroke-width:0.65487629;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
        id="rect3336"
        width="16.928144"
        height="254.37723"
-       x="359.51559"
+       x="274.15845"
        y="608.12714" />
     <g
        id="g4181">
       <rect
          ry="24.243662"
-         y="498.18222"
-         x="112.60394"
+         y="498.18228"
+         x="112.60393"
          height="125.5028"
-         width="510.75143"
+         width="340.03714"
          id="rect4164"
          style="fill:#2ab690;fill-opacity:1;stroke:none;stroke-width:2.21148777;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" />
       <rect
          ry="21.359825"
          y="505.64664"
-         x="120.47815"
+         x="117.84627"
          height="110.57398"
-         width="495.00302"
+         width="329.55252"
          id="rect4164-9"
-         style="fill:#2ab690;fill-opacity:1;stroke:#ffffff;stroke-width:4.36179066;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" />
+         style="fill:#2ab690;fill-opacity:1;stroke:#ffffff;stroke-width:3.55896068;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1" />
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:59.86352539px;line-height:130.99999428%;font-family:'Arial Black';-inkscape-font-specification:'Arial Black, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="176.63379"
+         x="176.2014"
          y="481.29633"
          id="text4199"
          sodipodi:linespacing="130.99999%"
          transform="scale(0.80465782,1.2427643)"><tspan
            sodipodi:role="line"
            id="tspan4201"
-           x="176.63379"
+           x="176.2014"
            y="481.29633"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:82.24060822px;line-height:130.99999428%;font-family:'Highway Gothic Expanded';-inkscape-font-specification:'Highway Gothic Expanded, ';fill:#ffffff">WESTCLIFFE</tspan></text>
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:82.24060822px;line-height:130.99999428%;font-family:'Highway Gothic Expanded';-inkscape-font-specification:'Highway Gothic Expanded, ';fill:#ffffff">Gardner</tspan></text>
     </g>
   </g>
 </svg>
