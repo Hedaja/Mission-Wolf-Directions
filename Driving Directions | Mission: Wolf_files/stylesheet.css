@@ -284,7 +284,7 @@ h2 {
 .bold {
 	font-weight: bold;
 }
-.hoverClass, #WestcliffeText:hover, #FortGarlandText:hover, #BishopCastleText:hover{
+.hoverClass, #WestcliffeText:hover, #FortGarlandText:hover, #BishopCastleText:hover, #GardnerText:hover {
 	background: #e7e7e7;
 	cursor: default;
 }
