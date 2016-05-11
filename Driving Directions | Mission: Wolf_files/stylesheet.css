@@ -54,7 +54,7 @@ h2 {
 	text-align: left;
 }
 #shadow {
-	min-height: 100%
+	min-height: 100%;
 	width: 100%;
 	background-image: url(shadow.png);
 	background-position: center;
@@ -283,4 +283,8 @@ h2 {
 }
 .bold {
 	font-weight: bold;
+}
+.hoverClass, #WestcliffeText:hover, #FortGarlandText:hover, #BishopCastleText:hover, #GardnerText:hover {
+	background: #e7e7e7;
+	cursor: default;
 }
