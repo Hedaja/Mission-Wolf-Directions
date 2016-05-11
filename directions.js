@@ -187,9 +187,8 @@ WestcliffeMarker.on('click', function(e) {
 	FortGarlandShort.setStyle(style_short);
 	FortGarlandLong.setStyle(style_long);
 	GardnerRoute.setStyle(style_short);
-	$("#FortGarlandText").removeClass('hoverClass');
-	$("#GardnerText").removeClass('hoverClass');
-	$("#BishopCastleText").removeClass('hoverClass');	WestcliffeMarker.off('mouseout');
+	$("#FortGarlandText, #GardnerText, #BishopCastleText").removeClass('hoverClass');
+	WestcliffeMarker.off('mouseout');
 	BishopMarker.on('mouseout', mouseout_BishopCastle);
 	GardnerMarker.on('mouseout', mouseout_Gardner);
 	FortGarlandMarker.on('mouseout', mouseout_FortGarland);
@@ -209,9 +208,7 @@ GardnerMarker.on('click', function(e) {
 	BishopCastleLong.setStyle(style_long);
 	FortGarlandShort.setStyle(style_short);
 	FortGarlandLong.setStyle(style_long);
-	$("#FortGarlandText").removeClass('hoverClass');
-	$("#WestcliffeText").removeClass('hoverClass');
-	$("#BishopCastleText").removeClass('hoverClass');
+	$("#FortGarlandText, #WestcliffeText, #BishopCastleText").removeClass('hoverClass');
 	GardnerMarker.off('mouseout');
 	BishopMarker.on('mouseout', mouseout_BishopCastle);
 	FortGarlandMarker.on('mouseout', mouseout_FortGarland);
@@ -232,9 +229,8 @@ BishopMarker.on('click', function(e) {
 	FortGarlandShort.setStyle(style_short);
 	FortGarlandLong.setStyle(style_long);
 	GardnerRoute.setStyle(style_short);
-	$("#FortGarlandText").removeClass('hoverClass');
-	$("#WestcliffeText").removeClass('hoverClass');
-	$("#GardnerText").removeClass('hoverClass');	BishopMarker.off('mouseout');
+	$("#FortGarlandText, #GardnerText, #WestcliffeText").removeClass('hoverClass');
+	BishopMarker.off('mouseout');
 	WestcliffeMarker.on('mouseout', mouseout_Westcliffe);
 	GardnerMarker.on('mouseout', mouseout_Gardner);
 	FortGarlandMarker.on('mouseout', mouseout_FortGarland);
@@ -255,9 +251,8 @@ FortGarlandMarker.on('click', function(e) {
 	BishopCastleShort.setStyle(style_short);
 	BishopCastleLong.setStyle(style_long);
 	GardnerRoute.setStyle(style_short);
-	$("#GardnerText").removeClass('hoverClass');
-	$("#WestcliffeText").removeClass('hoverClass');
-	$("#BishopCastleText").removeClass('hoverClass');	FortGarlandMarker.off('mouseout');
+	$("#WestcliffeText, #GardnerText, #BishopCastleText").removeClass('hoverClass');
+	FortGarlandMarker.off('mouseout');
 	WestcliffeMarker.on('mouseout');
 	GardnerMarker.on('mouseout', mouseout_Gardner);
 	BishopMarker.on('mouseout', mouseout_BishopCastle);
