@@ -288,3 +288,7 @@ h2 {
 	background-color: #e7e7e7;
 	cursor: default;
 }
+.clickClass{
+  background-color: #ffe3b3;
+  cursor: default;
+}
