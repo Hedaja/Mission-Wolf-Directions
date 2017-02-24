@@ -122,6 +122,7 @@ function click_Garnder(){
 	$("#FortGarlandText, #WestcliffeText, #BishopCastleText").removeClass('hoverClass');
 	GardnerMarker.off('mouseout');
 	BishopMarker.on('mouseout', mouseout_BishopCastle);
+	WestcliffeMarker.on('mouseout', mouseout_Westcliffe);
 	FortGarlandMarker.on('mouseout', mouseout_FortGarland);
 };
 function click_Bishop() {
@@ -161,7 +162,7 @@ function click_FortGarland(){
 	GardnerRoute.setStyle(style_short);
 	$("#WestcliffeText, #GardnerText, #BishopCastleText").removeClass('hoverClass');
 	FortGarlandMarker.off('mouseout');
-	WestcliffeMarker.on('mouseout');
+	WestcliffeMarker.on('mouseout'), mouseout_Westcliffe;
 	GardnerMarker.on('mouseout', mouseout_Gardner);
 	BishopMarker.on('mouseout', mouseout_BishopCastle);
 };
