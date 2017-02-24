@@ -112,7 +112,7 @@ function mouseout_FortGarland(){
 	$("#FortGarlandText").removeClass('hoverClass');
 }
 
-function click_Garnder(){
+function click_Gardner(){
 	GardnerRoute.setStyle(style_shortPerma);
 	BishopCastleShort.setStyle(style_short);
 	BishopCastleLong.setStyle(style_long);
@@ -235,40 +235,41 @@ var WestcliffeMarker = L.marker([38.1359, -105.4638],{icon: iconWestcliffe}).add
 WestcliffeMarker.on('mouseover', mousein_Westcliffe);
 WestcliffeMarker.on('mouseout', mouseout_Westcliffe);
 WestcliffeMarker.on('click', click_Westcliffe);
-$("#WestcliffeText").hover(function(){
-	WestcliffeRoute.setStyle(style_Hover);
-},
-mouseout_Westcliffe
-);
+$("#WestcliffeText").hover(function(){WestcliffeRoute.setStyle(style_Hover)},
+mouseout_Westcliffe);
+$("#WestcliffeText").on('click', click_Westcliffe);
+
 
 var GardnerMarker = L.marker([37.7832, -105.1661],{icon: iconGardner}).addTo(map);
 GardnerMarker.on('mouseover', mousein_Gardner);
 GardnerMarker.on('mouseout', mouseout_Gardner);
-GardnerMarker.on('click', click_Garnder);
-$("#GardnerText").hover(function(){
-	GardnerRoute.setStyle(style_Hover);
-},
+GardnerMarker.on('click', click_Gardner);
+$("#GardnerText").hover(function(){	GardnerRoute.setStyle(style_Hover)},
 mouseout_Gardner
 );
+$("#GardnerText").on('click', click_Gardner);
+
 
 var BishopMarker = L.marker([38.0608, -105.0940], {icon: iconBishopCastle}).addTo(map);
 BishopMarker.on('mouseover', mousein_BishopCastle);
 BishopMarker.on('mouseout', mouseout_BishopCastle);
 BishopMarker.on('click', click_Bishop);
-$("#BishopCastleText").hover(function(){
-	BishopCastleRoute.setStyle(style_Hover)},
+$("#BishopCastleText").hover(function(){BishopCastleRoute.setStyle(style_Hover)},
 	mouseout_BishopCastle
 );
+$("#BishopCastleText").on('click', click_Bishop);
+
 
 
 var FortGarlandMarker = L.marker([37.4272, -105.4312], {icon: iconFortGarland}).addTo(map);
 FortGarlandMarker.on('mouseover', mousein_FortGarland);
 FortGarlandMarker.on('mouseout', mouseout_FortGarland);
 FortGarlandMarker.on('click', click_FortGarland);
-$("#FortGarlandText").hover(function(){
-	FortGarlandRoute.setStyle(style_Hover)},
+$("#FortGarlandText").hover(function(){FortGarlandRoute.setStyle(style_Hover)},
 	mouseout_FortGarland
 );
+$("#FortGarlandText").on('click', click_FortGarland);
+
 
 function onLocationFound(e) {
 	var radius = e.accuracy / 2;
