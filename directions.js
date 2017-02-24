@@ -292,7 +292,7 @@ function locButton(){
 	var elem = document.getElementById("geolocate");
 	if (elem.text=="Locate me"){
 		map.locate({watch:true, enableHighAccuracy:true, setView:true})
-		elem.text = "Cancle";
+		elem.text = "Cancel";
 	} else {
 		elem.text = "Locate me";
 		map.stopLocate()
