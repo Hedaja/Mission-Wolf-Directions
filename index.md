@@ -1,37 +1,115 @@
-## Welcome to GitHub Pages
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<title>Driving Directions | Mission: Wolf</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="Driving directions to Mission: Wolf from Gardner, Westcliffe, Great Sand Dunes, Taos, and Bishop's Castle.">
+<meta name="copyright" content="Mission: Wolf">
+/<link type="text/css" rel="stylesheet" href="Driving%20Directions%20%7C%20Mission:%20Wolf_files/stylesheet.css">
+<link rel="shortcut icon" href="http://www.missionwolf.org/design/favicon.png">
+ <link rel="stylesheet" href="Leaflet/leaflet.css" />
+<style>
+#mapid { height: 500px; width: 300px;}
+.ui-button {
+  background:#3887BE;
+  display:block;
+  position:absolute;
+  top:5%;left:50%;
+  width:90px;
+  margin:-20px 0 0 -50px;
+  z-index:500;
+  text-align:center;
+  padding:2px;
+  border:1px solid rgba(0,0,0,0.4);
+  border-radius:3px;
+  }
+  .ui-button:hover {
+    background:#3074a4;
+    color:#fff;
+    }
+</style>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="Driving%20Directions%20%7C%20Mission:%20Wolf_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript" src="Driving%20Directions%20%7C%20Mission:%20Wolf_files/dropdown.js"></script>
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-25998185-1']);
+_gaq.push (['_gat._anonymizeIp']);
+  _gaq.push(['_trackPageview']);
 
-You can use the [editor on GitHub](https://github.com/Hedaja/Mission-Wolf-Directions/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</head>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<body>
+<div id="shadow">
+<div id="wrapper">
+	<a href="http://www.missionwolf.org/">
+		<div id="header"></div>
+	</a>
+	<div id="navbar">
+	<a href="http://www.missionwolf.org/menu/about/"><div id="nav0" class="nav" onmouseover="show('0');" onmouseout="starttime();">About</div></a><div style="visibility: hidden;" class="dropdown" id="dropdown0" onmouseover="stoptime();" onmouseout="starttime();"><a href="http://www.missionwolf.org/page/mission/"><div class="dropdownitem">Mission and Values</div></a><a href="http://www.missionwolf.org/page/staff-board-of-directors/"><div class="dropdownitem">Meet Our Staff</div></a><a href="http://www.missionwolf.org/page/history/"><div class="dropdownitem">History</div></a><a href="http://www.missionwolf.org/page/acknowledgements/"><div class="dropdownitem">Acknowledgements</div></a><a href="http://www.missionwolf.org/page/volunteer/"><div class="dropdownitem">Work at Mission: Wolf</div></a></div><a href="http://www.missionwolf.org/menu/wild-wolves/"><div id="nav1" class="nav" onmouseover="show('1');" onmouseout="starttime();">Wolves</div></a><div style="visibility: hidden;" class="dropdown" id="dropdown1" onmouseover="stoptime();" onmouseout="starttime();"><a href="http://www.missionwolf.org/menu/wolf-dog-help/"><div class="dropdownitem">Wolf-Dog Help</div></a><a href="http://www.missionwolf.org/menu/wild-wolves/"><div class="dropdownitem">Wild Wolves</div></a><a href="http://missionwolf.org/page/wolf-dog-difference/"><div class="dropdownitem">Comparing Wolves &amp; Dogs</div></a><a href="http://www.missionwolf.org/wolves/"><div class="dropdownitem">Current Resident Wolves</div></a><a href="http://www.missionwolf.org/past-wolves/"><div class="dropdownitem">Past Resident Wolves</div></a></div><a href="http://www.missionwolf.org/menu/visit/"><div id="nav2" class="nav" onmouseover="show('2');" onmouseout="starttime();">Visit</div></a><div style="visibility: hidden; left: 155px; top: 38px;" class="dropdown" id="dropdown2" onmouseover="stoptime();" onmouseout="starttime();"><a href="http://www.missionwolf.org/page/directions/"><div class="dropdownitem">Driving Directions</div></a><a href="http://www.missionwolf.org/page/day-visits/"><div class="dropdownitem">Day Visits</div></a><a href="http://missionwolf.org/page/volunteer-short-term/"><div class="dropdownitem">Volunteer</div></a><a href="http://www.missionwolf.org/page/visiting-camping/"><div class="dropdownitem">Overnight Visits/Camping</div></a><a href="http://www.missionwolf.org/page/groups-experiential-education/"><div class="dropdownitem">Groups/Experiential Education</div></a></div><a href="http://www.missionwolf.org/menu/news/"><div id="nav3" class="nav" onmouseover="show('3');" onmouseout="starttime();">News</div></a><div style="visibility: hidden;" class="dropdown" id="dropdown3" onmouseover="stoptime();" onmouseout="starttime();"><a href="http://www.missionwolf.org/page/news-updates/"><div class="dropdownitem">Updates</div></a><a href="http://www.missionwolf.org/page/newsletters/"><div class="dropdownitem">Newsletters</div></a><a href="http://www.missionwolf.org/page/press/"><div class="dropdownitem">M:W in the Press</div></a><a href="http://www.missionwolf.org/subscribe/"><div class="dropdownitem">Subscribe</div></a></div><a href="http://www.missionwolf.org/menu/programs/"><div id="nav4" class="nav" onmouseover="show('4');" onmouseout="starttime();">Programs</div></a><div style="visibility: hidden;" class="dropdown" id="dropdown4" onmouseover="stoptime();" onmouseout="starttime();"><a href="http://www.missionwolf.org/page/groups-experiential-education/"><div class="dropdownitem">Experiential Education</div></a><a href="http://www.missionwolf.org/page/land-preservation/"><div class="dropdownitem">Land Conservation</div></a><a href="http://www.missionwolf.org/menu/ambassador-wolves/"><div class="dropdownitem">Ambassador Tour</div></a><a href="http://www.missionwolf.org/menu/horses/"><div class="dropdownitem">Horse Education</div></a></div><a href="http://www.missionwolf.org/menu/sustainability/"><div id="nav5" class="nav" onmouseover="show('5');" onmouseout="starttime();">Sustainability</div></a><div style="visibility: hidden;" class="dropdown" id="dropdown5" onmouseover="stoptime();" onmouseout="starttime();"><a href="http://www.missionwolf.org/page/tipi/"><div class="dropdownitem">Tipis</div></a><a href="http://www.missionwolf.org/page/solar-wind-power/"><div class="dropdownitem">Solar &amp; Wind Power</div></a><a href="http://www.missionwolf.org/page/passive-solar-heating/"><div class="dropdownitem">Passive Solar Buildings</div></a><a href="http://www.missionwolf.org/page/greenhouse/"><div class="dropdownitem">Greenhouses</div></a><a href="http://www.missionwolf.org/page/recycled-building-materials/"><div class="dropdownitem">Recycled Building Materials</div></a><a href="http://www.missionwolf.org/page/vegetable-oil-vehicles/"><div class="dropdownitem">Vegetable Oil Vehicles</div></a></div><a href="http://www.missionwolf.org/menu/resources/"><div id="nav6" class="nav" onmouseover="show('6');" onmouseout="starttime();">Resources</div></a><div style="visibility: hidden;" class="dropdown" id="dropdown6" onmouseover="stoptime();" onmouseout="starttime();"><a href="http://www.missionwolf.org/page/faq/"><div class="dropdownitem">Frequently Asked Questions</div></a><a href="http://www.missionwolf.org/page/environmental-reading-list/"><div class="dropdownitem">Recommended Reading</div></a><a href="http://www.missionwolf.org/page/resources-for-teachers/"><div class="dropdownitem">For Teachers</div></a><a href="http://www.missionwolf.org/page/links/"><div class="dropdownitem">Links</div></a><a href="http://www.missionwolf.org/page/screen-saver-background/"><div class="dropdownitem">Screen Saver and Backgrounds</div></a><a href="http://www.missionwolf.org/menu/wolf-dog-help/"><div class="dropdownitem">Wolf-Dog Help</div></a></div><a href="http://mission-wolf-store.myshopify.com/collections/donation"><div id="nav7" class="nav" onmouseover="show('7');" onmouseout="starttime();">Donate</div></a><div style="visibility: hidden;" class="dropdown" id="dropdown7" onmouseover="stoptime();" onmouseout="starttime();"><a href="http://mission-wolf-store.myshopify.com/collections/wolf-caretaker"><div class="dropdownitem">Membership/Sponsorship</div></a><a href="http://www.missionwolf.org/donate/"><div class="dropdownitem">Donate</div></a><a href="http://www.missionwolf.org/donate-honor/"><div class="dropdownitem">Donate In Honor Of...</div></a><a href="http://www.missionwolf.org/page/wish-list/"><div class="dropdownitem">Wish List</div></a><a href="http://shop.missionwolf.org/"><div class="dropdownitem">Merchandise</div></a></div><a href="http://www.missionwolf.org/contact/"><div class="nav" onmouseover="hideall();">Contact</div></a><script type="text/javascript">var nav = new Array();nav[0] = 'dropdown0';nav[1] = 'dropdown1';nav[2] = 'dropdown2';nav[3] = 'dropdown3';nav[4] = 'dropdown4';nav[5] = 'dropdown5';nav[6] = 'dropdown6';nav[7] = 'dropdown7';</script></div>
 
-### Markdown
+<div id="content"><h1>Driving Directions</h1><div class="content"><strong>Mission: Wolf is open every day of the year from 9 am till 4 pm. <span style="color:#ff0000;">Please DO NOT bring your dog here.</span></strong><br>
+<br>
+<span style="color:#fc0400;">Beware GPS! </span>Once on the dirt roads stick to the directions listed below or you <em>will</em> get lost.<br>
+<br>
+<table width="100%" border="0">
+  <tr valign="top">
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+<td>
+<table>
+  <tr>
+<p id="WestcliffeText"><strong>From Westcliffe (coming from the north):</strong> </br>
+Follow Highway 69 south aproximately 30 miles and turn left on Gardner Road (County
+Road 634). Follow Gardner Road for 13.2 miles, keeping right at two "Y"
+intersections in the first 5 miles. At the Blue Spring State Land Trust
+sign and cattleguard, turn right. Follow the Mission: Wolf driveway 1.6
+miles along a fence line and across the field, all the way up the hill
+to the sanctuary. <em>This route may be extremely muddy with large snowdrifts from November through May.</em></p><br>
+  </tr>
+  <tr>
+<p id="GardnerText"><strong>From Gardner (coming from the south):</strong> </br>
+  Follow Highway 69 west from Gardner for 2 miles, and turn right on Gardner Road (County
+Road 634, a dirt road.) Follow Gardner Road for 13.2 miles, keeping
+right at two "Y" intersections in the first 5 miles. At the Blue Spring
+State Land Trust sign and cattleguard, turn right. Follow the Mission:
+Wolf driveway 1.6 miles along a fence line and across the field, all the
+ way up the hill to the sanctuary. <em>This route may be extremely muddy with large snowdrifts from November through May.</em></span><br>
+  </tr>
+  <br>
+  <tr>
+<p id="BishopCastleText"><strong>From Bishop's Castle on Hwy 165:</strong></br>
+  Drive one mile northwest on Hwy 165 and turn left at Ophir Creek Campground. Follow
+Ophir Creek Road south for 16 miles turn left at the Mission: Wolf
+driveway, just before the Blue Spring State Land Trust cattleguard.
+Drive 1.6 miles along a fence and all the way up the hill to the
+sanctuary. <strong><em>This route is closed in winter.</em></strong></span><br>
+<tr>
+  <br>
 
-```markdown
-Syntax highlighted code block
+<p id="FortGarlandText"><strong>From Taos, NM or Great Sand Dunes via Hwy 160 (coming from the southwest/west): </strong></br>
+  From Fort Garland, CO, take Hwy 160 east for 18.5 miles. Turn left onto Pass
+ Creek Road, a dirt road. Drive nine miles and turn right onto CR 570, a
+ paved road, at the T intersection. Drive 5 miles to Hwy 69 and turn
+left. Follow the directions above from Gardner. <em>This route may have deep snow in winter.</em></span><br>
+</tr>
 
-# Header 1
-## Header 2
-### Header 3
+</table>
+</td>
+<td width=auto >
 
-- Bulleted
-- List
+<div id="mapid">
+<a id='geolocate' class='ui-button'style="color:#fff; font-size:130%"
+    onclick="locButton()">Locate me</a>
+</div>
 
-1. Numbered
-2. List
+</td>
+</table>
+<script type="text/javascript"  src="Leaflet/leaflet.js"></script>
+<script type="text/javascript"  src='Leaflet/leaflet-omnivore.min.js'></script>
+<script type="text/javascript"  src='directions.js'></script>
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Hedaja/Mission-Wolf-Directions/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+</div></div></div></div><div id="footer">All content copyright&nbsp;?1986-2016 Mission: Wolf. All rights reserved. Site by <a title="Jeff Wagner - Environmental and Spiritual Education" href="http://www.wild-sky.org/" target="_blank">Jeff Wagner</a>.</div></body></html>
